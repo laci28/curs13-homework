@@ -11,10 +11,15 @@ public class DailyPlanner {
         }
     }
 
-    public Map<DaysOfTheWeek, String> addActivity(DaysOfTheWeek days, String activity){
-        Map<DaysOfTheWeek, String> result = new HashMap<>();
+    public Map<DaysOfTheWeek, List<String>> addActivity(DaysOfTheWeek days, String activity){
+        List<String> activit = new ArrayList<>();
+        Map<DaysOfTheWeek, List<String>> result = new HashMap<>();
+
         for (DaySchedule daySchedule : daySchedules){
-            
+            if (daySchedule.getDay().equals(days)){
+                //daySchedule.getSchedule().add(activity);
+                result.put(daySchedule.getDay(), daySchedule.setSchedule());
+            }
         }
         return result;
     }
