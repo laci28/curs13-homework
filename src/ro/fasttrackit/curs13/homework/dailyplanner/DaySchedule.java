@@ -28,8 +28,4 @@ public class DaySchedule {
         return "Day schedule: " + schedule;
     }
 
-    public List<String> setSchedule() {
-        this.schedule = schedule;
-        return schedule;
-    }
 }
