@@ -90,11 +90,17 @@ public class DailyPlanner {
         }
     }
 
-    public Map<DaysOfTheWeek, List<String>> endPlanning(){
+    public Map<DaysOfTheWeek, List<String>> endPlanning() {
         Map<DaysOfTheWeek, List<String>> result = new HashMap<>();
-        try{
-
-        }catch (NoActivitiesForDayException ex){
+        try {
+            result.put(DaysOfTheWeek.MONDAY, day1);
+            result.put(DaysOfTheWeek.TUESDAY, day2);
+            result.put(DaysOfTheWeek.WEDNESDAY, day3);
+            result.put(DaysOfTheWeek.THURSDAY, day4);
+            result.put(DaysOfTheWeek.FRIDAY, day5);
+            result.put(DaysOfTheWeek.SATURDAY, day6);
+            result.put(DaysOfTheWeek.SUNDAY, day7);
+        } catch (NoActivitiesForDayException ex) {
             System.out.println(ex.getMessage());
         }
         return result;
