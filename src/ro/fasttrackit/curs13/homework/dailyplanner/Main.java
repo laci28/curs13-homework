@@ -15,15 +15,20 @@ public class Main {
         System.out.println("4. end planning");
         System.out.print("Your choice: ");
         int input = keyboard.nextInt();
-        switch (input){
+        switch (input) {
             case 1:
-                System.out.print("Please select a day: ");
-                readDay = keyboard.nextLine();
-                DaysOfTheWeek day = DaysOfTheWeek.valueOf(readDay);
-                System.out.print("Pleas add an activity: ");
-                activit = keyboard.nextLine();
-                dailyPlanner.addActivity(day, activit);
-                break;
+                try {
+                    System.out.print("Please select a day: ");
+                    readDay = keyboard.nextLine();
+                    DaysOfTheWeek day = DaysOfTheWeek.valueOf(readDay.toUpperCase());
+                    System.out.print("Pleas add an activity: ");
+                    activit = keyboard.nextLine();
+                    dailyPlanner.addActivity(day, activit);
+                    break;
+                } catch (Exception ex) {
+                    ex.printStackTrace();
+                }
+
             case 2:
                 activit = keyboard.nextLine();
                 dailyPlanner.removeActivity(DaysOfTheWeek.MONDAY, activit);
